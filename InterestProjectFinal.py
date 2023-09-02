@@ -19,36 +19,17 @@ def simple_interest(initial_amount):
 def compound_interest(initial_amount):
     return [round((1.1 ** i) * float(initial_amount)) for i in range(1,11)]
 
-print("Hello!!!")
-
-print("Hello2")
-
 def complex_compound_interest(compounds_per_year):
     print("This is the scenerio compounded monthly:")
-    for i in range(1,11):
-        exponent = 12 * i 
-        divide = .05/12
-        multiply = (1 + divide)
-        mul2 = multiply ** exponent
-        print(round(mul2 * 100, 4))
+    print([round((100 * (1 + .05/12) ** (12 * i)), 4) for i in range(1,11)])
     
     print("This is the scenerio compounded " + compounds_per_year + " times:")
-    for i in range(1,11):
-        num = float(compounds_per_year)
-        exponent2 = num * i 
-        divide2 = .05/num
-        multiply2 = (1 + divide2)
-        mul22 = multiply2 ** exponent2
-        print(round(mul22 * 100, 4))
-    return "compounds_per_year"
+    print([round((100 * (1 + .05/float(compounds_per_year)) ** (float(compounds_per_year) * i)), 4) for i in range(1,11)])
+    return " "
 
 def continuous_interest(continuous_interest_input):
-    for i in range(1,11):
-        num = i * .10
-        num2 = 2.71828 ** num
-        print(round(float(continuous_interest_input) * num2))
-    return "End"
-
+    return [round(float(continuous_interest_input) * (2.71828 ** (i * .10))) for i in range(1,11)]
+    
 
 # Choices
 def choices():
