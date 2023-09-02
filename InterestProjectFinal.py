@@ -17,10 +17,11 @@ def simple_interest(initial_amount):
 
 
 def compound_interest(initial_amount):
-    for i in range(1, 10):
-        exponent = 1.1 ** i
-        print(round(exponent * float(initial_amount)))
-    return "End"
+    return [round((1.1 ** i) * float(initial_amount)) for i in range(1,11)]
+
+print("Hello!!!")
+
+print("Hello2")
 
 def complex_compound_interest(compounds_per_year):
     print("This is the scenerio compounded monthly:")
